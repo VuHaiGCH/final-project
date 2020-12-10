@@ -1,15 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
-// import { removeFee } from "../../action/feeAction";
+import { removeMark } from "../../action/markAction";
 
 const MarkDetail = ({ mark }) => {
-//   const handleRemove = (fee) => {
-//     removeFee(fee);
-//   };
+  const handleRemove = (mark) => {
+    removeMark(mark);
+  };
   return (
     <>
       <tr>
         <td>{mark.id}</td>
+        <td>{mark.displayName}</td>
         <td>{mark.class}</td>
         <td>{mark.course}</td>
         <td>{mark.onlineTest}</td>
@@ -17,15 +18,15 @@ const MarkDetail = ({ mark }) => {
         <td>{mark.report}</td>
         <td>{mark.avg}</td>
         <td>{mark.status}</td>
-        {/* <td>
+        <td>
           <span
             className="material-icons text-danger"
             style={{ cursor: "pointer" }}
-            onClick={() => handleRemove(fee)}
+            onClick={() => handleRemove(mark)}
           >
             delete
           </span>
-        </td> */}
+        </td>
       </tr>
     </>
   );
@@ -33,8 +34,7 @@ const MarkDetail = ({ mark }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // removeFee: (fee) => dispatch(removeFee(fee)),
-    // toggleChecked: (task) => dispatch(toggleChecked(task)),
+    removeMark: (mark) => dispatch(removeMark(mark)),
   };
 };
 

@@ -44,6 +44,15 @@ class AddMark extends Component {
                             <label htmlFor="id">ID of Student</label>
                             <input type="text" className="form-control" id="id" onChange={this.handleChange} required />
                         </div>
+                        
+                        <div className="form-group col-md-4">
+                            <label htmlFor="displayName">Name of Student</label>
+                            <input type="text" className="form-control" id="displayName" onChange={this.handleChange} required />
+                        </div>
+
+                    </div>
+                    <div className="form-row">
+                        
                         <div className="form-group col-md-4">
                             <label htmlFor="course">Name of Course</label>
                             <input type="text" className="form-control" id="course" onChange={this.handleChange} required />

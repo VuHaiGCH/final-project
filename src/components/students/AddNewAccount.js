@@ -3,7 +3,7 @@ import { signUp } from "../../action/authAction";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
-class SignUp extends Component {
+class AddNewAccount extends Component {
   state = {
     email: "",
     password: "",
@@ -23,8 +23,7 @@ class SignUp extends Component {
   };
 
   render() {
-    const { uid } = this.props;
-    if (uid) return <Redirect to="/" />;
+
     return (
       <>
         <form
@@ -55,8 +54,19 @@ class SignUp extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
-            SignUp
+
+          <div className="form-group">
+            <label htmlFor="password">Enter Username</label>
+            <input
+              type="text"
+              className="form-control"
+              id="displayName"
+              onChange={this.handleChange}
+            />
+          </div>
+          
+          <button type="submit" className="btn btn-primary w-100">
+            Sign Up
           </button>
         </form>
       </>
@@ -78,4 +88,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(AddNewAccount);

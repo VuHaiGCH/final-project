@@ -34,9 +34,12 @@ const sidebarItems = ({ signOut, uid }) => {
                         <Link to="/addstudents" className="list-group-item list-group-item-action bg-dark text-white">
                             <span className="menu-collapsed">Add New Students</span>
                         </Link>
+                        <Link to="/add-account" className="list-group-item list-group-item-action bg-dark text-white">
+                            <span className="menu-collapsed">Add New Account</span>
+                        </Link>
                     </div>
 
-                    <Link to="/listteachers" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                    {/* <Link to="/listteachers" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
                         <div className="d-flex w-100 justify-content-start align-items-center">
                             <span className="menu-collapsed">Teachers</span>
                             <span className="submenu-icon ml-auto"></span>
@@ -50,9 +53,9 @@ const sidebarItems = ({ signOut, uid }) => {
                         <Link to="/addteachers" className="list-group-item list-group-item-action bg-dark text-white">
                             <span className="menu-collapsed">Add New Teachers</span>
                         </Link>
-                    </div>
+                    </div> */}
 
-                    <Link to="/liststudents" data-toggle="collapse" aria-expanded="false" className="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                    {/* <Link to="/liststudents" data-toggle="collapse" aria-expanded="false" className="bg-dark list-group-item list-group-item-action flex-column align-items-start">
                         <div className="d-flex w-100 justify-content-start align-items-center">
                             <span className="menu-collapsed">Classes</span>
                             <span className="submenu-icon ml-auto"></span>
@@ -66,7 +69,7 @@ const sidebarItems = ({ signOut, uid }) => {
                         <Link to ="/add-class" className="list-group-item list-group-item-action bg-dark text-white">
                             <span className="menu-collapsed">Add New Classes</span>
                         </Link>
-                    </div>
+                    </div> */}
 
                     <Link to="/listfee" data-toggle="collapse" aria-expanded="false" className="bg-dark list-group-item list-group-item-action flex-column align-items-start">
                         <div className="d-flex w-100 justify-content-start align-items-center">

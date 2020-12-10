@@ -1,9 +1,11 @@
 import React from "react";
-import moment from "moment";
+import { removeStudent } from "../../action/studentAction";
 import { connect } from "react-redux";
 
 const ListStudent = ({ student }) => {
-
+  const handleRemove = (student) => {
+    removeStudent(student);
+  };
   return (
     <>
       <tr>
@@ -12,7 +14,17 @@ const ListStudent = ({ student }) => {
         <td className="align-middle">{student.course}</td>
         <td className="align-middle">{student.field}</td>
         <td className="align-middle">{student.email}</td>
+        <td className="align-middle">{student.displayName}</td>
         <td><img src={student.downloadURL} style={{width:200,height:200}}/></td>
+        <td>
+          <span
+            className="material-icons text-danger"
+            style={{ cursor: "pointer" }}
+            onClick={() => handleRemove(student)}
+          >
+            delete
+          </span>
+        </td>
       </tr>
     </>
   );
@@ -20,7 +32,7 @@ const ListStudent = ({ student }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // removeTask: (task) => dispatch(removeTask(task)),
+    removeStudent: (student) => dispatch(removeStudent(student)),
   };
 };
 

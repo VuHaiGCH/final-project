@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { removeFee } from "../../action/feeAction";
+import { Link } from "react-router-dom";
 
 const ListFee = ({ fee, removeFee }) => {
   const handleRemove = (fee) => {
@@ -9,11 +10,13 @@ const ListFee = ({ fee, removeFee }) => {
   return (
     <>
       <tr>
-        <td>{fee.name}</td>
+        <td>{fee.displayName}</td>
         <td>{fee.semester}</td>
         <td>{fee.needPaid}</td>
         <td>{fee.hasPaid}</td>
-
+        <td>{fee.nameBank}</td>
+        <td>{fee.idbank}</td>
+        <td>{fee.status}</td>
         <td>
           <span
             className="material-icons text-danger"

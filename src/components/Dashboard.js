@@ -2,14 +2,15 @@ import React from 'react';
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
+import SideBar from '../layout/SideBar';
 
 const Dashboard = ({ students }) => {
-    return (
+    
 
+    return (
         
         <div className="container-fluid p-0">
 
-            
             <h1 id="title-dashboard">Dashboard</h1>
 
             <div className="row mt-3 mb-4" id="card-dashboard">
@@ -84,25 +85,25 @@ const Dashboard = ({ students }) => {
                 <thead>
                     <tr>
                         <th scope="col">Full Name</th>
-                        <th scope="col">Course</th>
+                        <th scope="col">Teacher</th>
                         <th scope="col">Stars</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
+                        <td>Mr Adam</td>
+                        <td>3*</td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
+                        <td>Mr Jacob</td>
+                        <td>4*</td>
                     </tr>
                     <tr>
                         <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
+                        <td>Mrs Larry</td>
+                        <td>4*</td>
                     </tr>
                 </tbody>
             </table>

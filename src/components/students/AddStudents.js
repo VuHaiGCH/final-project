@@ -82,6 +82,10 @@ class AddStudents extends Component {
             <label htmlFor="email">Email</label>
             <input type="email" className="form-control" id="email" onChange={this.handleChange} required />
           </div>
+          <div className="form-group">
+            <label htmlFor="displayName">Username</label>
+            <input type="text" className="form-control" id="displayName" onChange={this.handleChange} required />
+          </div>
 
           <div className="form-row">
 

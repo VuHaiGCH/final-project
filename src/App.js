@@ -25,6 +25,8 @@ import ListDocuments from './components/Document/ListDocuments';
 import AddDocument from './components/Document/AddDocument';
 import AddnewClass from './components/Classes/AddnewClass';
 import ListofClasses from './components/Classes/ListofClasses';
+import EditFee from './components/fee/EditFee';
+import AddNewAccount from './components/students/AddNewAccount';
 
 function App() {
   return (
@@ -86,7 +88,15 @@ function App() {
       <Route path="/list-classes">
         <ListofClasses />
       </Route>
-      
+        
+      <Route path="/edit-fee/:id">
+        <EditFee />
+      </Route>
+
+      <Route path="/add-account">
+        <AddNewAccount />
+      </Route>
+
     </Switch>
     </div>
       </div>

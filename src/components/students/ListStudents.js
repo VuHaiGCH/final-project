@@ -19,7 +19,9 @@ const ListStudents = ({ students }) => {
             <th scope="col">Course</th>
             <th scope="col">Field</th>
             <th scope="col">Email</th>
+            <th scope="col">Username</th>
             <th scope="col">Avatar</th>
+            <th scope="col">Option</th>
           </tr>
         </thead>
 

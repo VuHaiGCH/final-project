@@ -5,6 +5,7 @@ import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 
 const ListFees = ({ fees }) => {
+
   return (
     <>
     <h1 className="text-center">List of Fee</h1>
@@ -18,10 +19,15 @@ const ListFees = ({ fees }) => {
             <th scope="col">Semester</th>
             <th scope="col">Need Paid</th>
             <th scope="col">Has Paid</th>
+            <th scope="col">Name of Bank</th>
+            <th scope="col">ID Bank</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
           {fees && fees.map((fee) => <ListFee fee={fee} key={fee.id} />)}
+
         </tbody>
       </table>
     </>

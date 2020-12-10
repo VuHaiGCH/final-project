@@ -24,24 +24,22 @@ export const signIn = (credentials) => {
     }
   }
   
-  export const signUp = (newUser) => {
-    return (dispatch, getState, {getFirebase, getFirestore}) => {
+  export const signUp = creds => {
+    return (dispatch, getState, { getFirebase }) => {
       const firebase = getFirebase();
-      const firestore = getFirestore();
   
-      firebase.auth().createUserWithEmailAndPassword(
-        newUser.email, 
-        newUser.password
-      ).then(resp => {
-        return firestore.collection('users').doc(resp.user.uid).set({
-          firstName: newUser.firstName,
-          lastName: newUser.lastName,
-          initials: newUser.firstName[0] + newUser.lastName[0]
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(creds.email, creds.password)
+        .then((res) => {
+          res.user.updateProfile({
+            displayName: creds.displayName        })
+        })
+        .then(() => {
+          dispatch({ type: "SIGNUP_SUCCESS" });
+        })
+        .catch(err => {
+          dispatch({ type: "SIGNUP_ERROR" }, err);
         });
-      }).then(() => {
-        dispatch({ type: 'SIGNUP_SUCCESS' });
-      }).catch((err) => {
-        dispatch({ type: 'SIGNUP_ERROR', err});
-      });
-    }
-  }
+    };
+  };

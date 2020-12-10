@@ -12,13 +12,34 @@ export const createStudent = (student) => {
       })
       .then(() => {
         dispatch({
-          type: "ADD_SUCCESS",
+          type: "ADD_STUDENT",
           student,
         });
       })
       .catch((err) => {
         dispatch({
-          type: "ADD_ERROR",
+          type: "ADD_STUDENT_ERR",
+          err,
+        });
+      });
+  };
+};
+
+export const removeStudent = (student) => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firestore = getFirebase().firestore();
+    firestore
+      .collection("students")
+      .doc(student.id)
+      .delete()
+      .then(() => {
+        dispatch({
+          type: "REMOVE_STUDENT",
+        });
+      })
+      .catch((err) => {
+        dispatch({
+          type: "REMOVE_STUDENT_ERR",
           err,
         });
       });

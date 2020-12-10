@@ -15,6 +15,7 @@ const MarkReport = ({ marks }) => {
         <thead>
           <tr className="text-dark">
             <th scope="col">ID Of Student</th>
+            <th scope="col">Name Of Student</th>
             <th scope="col">Class</th>
             <th scope="col">Course</th>
             <th scope="col">Online Test</th>
@@ -22,6 +23,7 @@ const MarkReport = ({ marks }) => {
             <th scope="col">Report</th>
             <th scope="col">Avarage</th>
             <th scope="col">Status</th>
+            <th scope="col">Option</th>
           </tr>
         </thead>
         <tbody>

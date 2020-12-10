@@ -24,3 +24,24 @@ export const createMark = (mark) => {
         });
     };
   };
+
+  export const removeMark = (mark) => {
+    return (dispatch, getState, { getFirebase }) => {
+      const firestore = getFirebase().firestore();
+      firestore
+        .collection("mark")
+        .doc(mark.id)
+        .delete()
+        .then(() => {
+          dispatch({
+            type: "REMOVE_MARK",
+          });
+        })
+        .catch((err) => {
+          dispatch({
+            type: "REMOVE_MARK_ERR",
+            err,
+          });
+        });
+    };
+  };

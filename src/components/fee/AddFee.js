@@ -7,7 +7,10 @@ class AddFee extends Component {
         name: '',
         semester: '',
         needPaid: '',
-        hasPaid: ''
+        hasPaid: '',
+        idbank: '',
+        nameBank: '',
+        status:''
     }
 
     handleChange = (e) => {
@@ -34,11 +37,11 @@ class AddFee extends Component {
                     <h1 className="text-center">ADD FEE</h1>
 
                     <div className="form-row">
-                        <div className="form-group col-md-6">
-                            <label htmlFor="name">ID Of Student</label>
-                            <input type="text" className="form-control" id="name" onChange={this.handleChange} required />
+                        <div className="form-group col-md-4">
+                            <label htmlFor="name">Name of Student</label>
+                            <input type="text" className="form-control" id="displayName" onChange={this.handleChange} required />
                         </div>
-                        <div className="form-group col-md-6">
+                        <div className="form-group col-md-4">
                             <label htmlFor="semester">Semester</label>
                             <select class="custom-select" id="semester" onChange={this.handleChange}  required>
                                 <option selected value="">Choose...</option>
@@ -60,12 +63,28 @@ class AddFee extends Component {
                     <div className="form-row">
                         <div className="form-group col-md-6">
                             <label htmlFor="needPaid">Need Paid</label>
-                            <input type="number" className="form-control" id="needPaid" onChange={this.handleChange} required />
+                            <input type="text" className="form-control" id="needPaid" onChange={this.handleChange} required />
                         </div>
                         <div className="form-group col-md-6">
                             <label htmlFor="hasPaid">Has Paid</label>
-                            <input type="number" className="form-control" id="hasPaid" onChange={this.handleChange} required />
+                            <input type="text" className="form-control" id="hasPaid" onChange={this.handleChange} required />
                         </div>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="nameBank">Name of Bank</label>
+                            <input type="text" className="form-control" id="nameBank" onChange={this.handleChange} required />
+                        </div>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="idbank">ID Bank</label>
+                            <input type="text" className="form-control" id="idbank" onChange={this.handleChange} required />
+                        </div>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="status">Status</label>
+                            <select class="custom-select" id="status" onChange={this.handleChange}  required>
+                                <option selected value="">Choose...</option>
+                                <option>Done</option>
+                                <option>Not Yet</option>
+                            </select>                        
+                            </div>
                     </div>
                     <button className="btn btn-primary w-100">Submit</button>
                 </form>
